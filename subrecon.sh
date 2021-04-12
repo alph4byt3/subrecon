@@ -14,7 +14,7 @@ echo "[+] Running Subfinder"
 echo " "
 sleep 3
 
-subfinder -d $domain -silent -o domains.txt
+subfinder -all -config /home/kali/Misc/config.yaml -d $domain -silent -o domains.txt
 
 echo " "
 sleep 3
