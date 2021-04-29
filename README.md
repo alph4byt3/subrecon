@@ -2,6 +2,7 @@
 Personal Subdomain Recon bash script
 
 ## Prerequisites
+- GO path set in PATH
 - Subfinder with config file in 'Misc' directory
 - Amass with config file in 'Misc' directory
 - ShuffleDNS
