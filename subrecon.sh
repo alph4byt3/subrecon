@@ -36,7 +36,7 @@ rm shuffledns.txt
 
 echo " "
 sleep 3
-echo -e "\e[32m[+] Running Httpx\e[0m"
+echo -e "\e[32m[+] Running httpx\e[0m"
 echo " "
 
 httpx -l subdomains.txt -fc 301,302 -threads 1 -o urls.txt -silent
