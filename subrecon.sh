@@ -2,15 +2,15 @@
 
 domain=$1
 
-echo """================================================
-                   alph4byt3
-================================================
+echo -e """\e[33m================================================\e[0m
+                   \e[35msubrecon\e[0m
+\e[33m================================================\e[0m
 """
 
 sleep 3
-echo "Script started - Root domain is $domain"
+echo -e "Script started - Root domain is \e[31m$domain\e[0m"
 echo " "
-echo "[+] Running Subfinder"
+echo -e "\e[32m[+] Running Subfinder\e[0m"
 echo " "
 sleep 3
 
@@ -18,7 +18,7 @@ subfinder -all -config /home/kali/Misc/config.yaml -d $domain -silent -o subfind
 
 sleep 3
 echo " "
-echo "[+] Running ShuffleDNS"
+echo -e "\e[32m[+] Running ShuffleDNS\e[0m"
 echo " "
 sleep 3
 
@@ -26,7 +26,7 @@ shuffledns -d $domain -w /home/kali/Misc/wordlists/ultimate-subs.txt -r /home/ka
 
 echo " "
 sleep 3
-echo "[!] Cleaning subdomains"
+echo -e "\e[33m[!] Cleaning subdomains\e[0m"
 cat subfinder.txt > domains.txt
 cat shuffledns.txt >> domains.txt
 cat domains.txt | sort -u > subdomains.txt
@@ -36,12 +36,12 @@ rm shuffledns.txt
 
 echo " "
 sleep 3
-echo "[+] Running httpx"
+echo -e "\e[32m[+] Running Httpx\e[0m"
 echo " "
 
 httpx -l subdomains.txt -fc 301,302 -threads 1 -o urls.txt -silent
 
 echo " "
 sleep 3
-echo "[+] My work here is done..."
+echo -e "\e[32m[+] My work is done...\e[0m"
 echo " "
