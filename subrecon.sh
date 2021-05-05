@@ -14,25 +14,25 @@ echo -e "\e[32m[+] Running Subfinder\e[0m"
 echo " "
 sleep 3
 
-subfinder -all -config /home/kali/Misc/config.yaml -d $domain -silent -o subfinder.txt
+subfinder -all -config /home/kali/Misc/config.yaml -d $domain -o subfinder.txt
 
 sleep 3
 echo " "
-echo -e "\e[32m[+] Running ShuffleDNS\e[0m"
+echo -e "\e[32m[+] Running PureDNS\e[0m"
 echo " "
 sleep 3
 
-shuffledns -d $domain -w /home/kali/Misc/wordlists/ultimate-subs.txt -r /home/kali/Misc/resolvers.txt -o shuffledns.txt -silent
+puredns bruteforce /home/kali/Misc/wordlists/ultimate-subs.txt $domain -r /home/kali/Misc/resolvers.txt -w puredns.txt
 
 echo " "
 sleep 3
 echo -e "\e[33m[!] Cleaning subdomains\e[0m"
 cat subfinder.txt > domains.txt
-cat shuffledns.txt >> domains.txt
+cat puredns.txt >> domains.txt
 cat domains.txt | sort -u > subdomains.txt
 rm domains.txt
 rm subfinder.txt
-rm shuffledns.txt
+rm puredns.txt
 
 echo " "
 sleep 3
