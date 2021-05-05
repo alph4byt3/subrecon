@@ -5,7 +5,7 @@ Personal Subdomain Recon bash script
 - GO path set in PATH
 - MassDNS
 - Subfinder with config file in 'Misc' directory
-- ShuffleDNS
+- PureDNS
 - Httpx
 - Subdomain wordlist in 'Misc/wordlists' directory
 - Resolvers in 'Misc' directory
