@@ -24,22 +24,25 @@ sleep 3
 
 puredns bruteforce /home/kali/Misc/wordlists/ultimate-subs.txt $domain -r /home/kali/Misc/resolvers.txt -w puredns.txt
 
+sleep 3
+echo " "
+echo -e "\e[32m[+] Running Amass\e[0m"
+echo " "
+sleep 3
+
+amass enum -silent -d $domain -config /home/kali/Misc/config.ini -o amass.txt
+
 echo " "
 sleep 3
 echo -e "\e[33m[!] Cleaning subdomains\e[0m"
 cat subfinder.txt > domains.txt
 cat puredns.txt >> domains.txt
+cat amass.txt >> domains.txt
 cat domains.txt | sort -u > subdomains.txt
 rm domains.txt
 rm subfinder.txt
 rm puredns.txt
-
-echo " "
-sleep 3
-echo -e "\e[32m[+] Running httpx\e[0m"
-echo " "
-
-httpx -l subdomains.txt -fc 301,302 -threads 1 -o urls.txt -silent
+rm amass.txt
 
 echo " "
 sleep 3
