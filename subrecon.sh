@@ -30,7 +30,7 @@ echo -e "\e[32m[+] Running Amass\e[0m"
 echo " "
 sleep 3
 
-amass enum -d $domain -passive -config /home/kali/Misc/config.ini -o amass.txt
+amass enum -d $domain -passive -nolocaldb -config /home/kali/Misc/config.ini -o amass.txt
 
 echo " "
 sleep 3
