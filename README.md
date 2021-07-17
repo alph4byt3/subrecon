@@ -7,4 +7,5 @@ Personal Subdomain Recon bash script
 - Subfinder with config file in 'Misc' directory
 - PureDNS
 - Subdomain wordlist in 'Misc/wordlists' directory
+- Amass
 - Resolvers in 'Misc' directory
