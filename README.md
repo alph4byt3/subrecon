@@ -6,6 +6,6 @@ Personal Subdomain Recon bash script
 - MassDNS
 - Subfinder with config file in 'Misc' directory
 - PureDNS
-- Httpx
+- Gotator
 - Subdomain wordlist in 'Misc/wordlists' directory
 - Resolvers in 'Misc' directory
