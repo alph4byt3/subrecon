@@ -77,7 +77,7 @@ echo -e "\e[32m[+] Probing using Htppx\e[0m"
 echo "Command: httpx -l portscan.txt -retries 5 -random-agent -proxy 'http://8zbh8:j8yqfh6q@45.89.241.37:5432' -mc 200,301,302,401,403,404 -silent | sort -u > endpoints.txt"
 echo " "
 
-httpx -l portscan.txt -retries 5 -random-agent -proxy 'http://8zbh8:j8yqfh6q@45.89.241.37:5432' -mc 200,301,302,401,403,404 -silent | sort -u > endpoints-$domain.txt
+httpx -l portscan.txt -retries 5 -t 150 -rl 500 -random-agent -proxy 'http://8zbh8:j8yqfh6q@45.89.241.37:5432' -mc 200,301,302,401,403,404 -silent | sort -u > endpoints-$domain.txt
 
 echo -e "\e[32m...Cleaning up...\e[0m"
 echo " "
