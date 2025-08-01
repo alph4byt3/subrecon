@@ -11,7 +11,7 @@ list=("intigriti.com" "hackerone.com")
 for domain in ${list[@]}; do
 
   echo " "
-  echo -e "Processing domain - \e[31m$domain\e[0m"
+  echo -e "Started processing domain - \e[31m$domain\e[0m"
   echo " ";
   echo -e "\e[32m[+] Running Subfinder...\e[0m"
   subfinder -d $domain -all -o subdomains.txt -silent > /dev/null
