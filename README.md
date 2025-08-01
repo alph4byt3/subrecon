@@ -2,10 +2,8 @@
 Personal Subdomain Recon bash script
 
 ## Prerequisites
-- GO path set in PATH
-- MassDNS
-- Subfinder with config file in 'Misc' directory
-- PureDNS
-- Subdomain wordlist in 'Misc/wordlists' directory
-- Amass
-- Resolvers in 'Misc' directory
+- Subfinder
+- ShuffleDNS (needs MassDNS)
+- Naabu
+- Httpx
+- Resolvers file
