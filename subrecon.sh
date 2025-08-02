@@ -25,7 +25,6 @@ for domain in ${list[@]}; do
   echo -e "\e[32m[+] Running Httpx...\e[0m";
   httpx -list portscan.txt -mc 200,401,403 -rate-limit 100 -o live_urls_$domain.txt -silent > /dev/null
   
-  echo -e "\e[32mDeleting temporary files...\e[0m";
   rm subdomains.txt;
   rm resolved.txt
   rm portscan.txt;
